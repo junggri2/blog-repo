@@ -11,9 +11,9 @@ import cookieParser from "cookie-parser";
 import "reflect-metadata";
 import {ValidationPipe} from "@nestjs/common";
 
+console.log(123)
 async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
-
 
     app.enableCors(setCorsOption<string>(
         [
