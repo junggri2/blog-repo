@@ -13,6 +13,7 @@ import {ValidationPipe} from "@nestjs/common";
 
 console.log(123)
 console.log(12344)
+console.log(12345)
 
 async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
