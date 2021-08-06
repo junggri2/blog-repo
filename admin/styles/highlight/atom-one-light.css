@@ -1,0 +1,98 @@
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.ql-syntax .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #383a42;
+    background: #fafafa;
+}
+
+.ql-syntax .hljs-comment,
+.ql-syntax .hljs-quote {
+    color: #a0a1a7 !important;
+    font-style: italic;
+    font-weight: 400 !important;
+}
+
+.ql-syntax .hljs-doctag,
+.ql-syntax .hljs-keyword,
+.ql-syntax .hljs-formula {
+    color: #a626a4 !important;
+}
+
+.ql-syntax .hljs-section,
+.ql-syntax .hljs-name,
+.ql-syntax .hljs-selector-tag,
+.ql-syntax .hljs-deletion,
+.ql-syntax .hljs-subst {
+    color: black
+}
+
+.ql-syntax .hljs-literal {
+    color: #4078f2 !important;
+}
+
+/*.ql-syntax .hljs-string,*/
+.ql-syntax .hljs-regexp,
+.ql-syntax .hljs-addition,
+.ql-syntax .hljs-attribute,
+.ql-syntax .hljs-meta-string {
+    color: rgb(80, 161, 78) !important;
+}
+
+.ql-syntax .hljs-built_in,
+.ql-syntax .hljs-class .hljs-title {
+    color: #c18401 !important;
+}
+
+.ql-syntax .hljs-attr,
+.ql-syntax .hljs-variable,
+.ql-syntax .hljs-template-variable,
+.ql-syntax .hljs-type,
+.ql-syntax .hljs-selector-class,
+.ql-syntax .hljs-selector-attr,
+.ql-syntax .hljs-selector-pseudo,
+.ql-syntax .hljs-number {
+    color: #986801 !important;
+}
+
+.ql-syntax .hljs-symbol,
+.ql-syntax .hljs-bullet,
+.ql-syntax .hljs-link,
+.ql-syntax .hljs-meta,
+.ql-syntax .hljs-selector-id,
+.ql-syntax .hljs-title {
+    color: #4078f2 !important;
+}
+
+.ql-syntax .hljs-emphasis {
+    font-style: italic !important;
+}
+
+.ql-syntax .hljs-strong {
+    font-weight: bold !important;
+}
+
+.ql-syntax .hljs-link {
+    text-decoration: underline;
+}
+

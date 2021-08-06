@@ -1,0 +1,127 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input DashBoardInput {
+  frequency: dashBoardFrequency!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Hit {
+  createdAt: DateTime!
+  hashId: ID!
+  id: Int!
+  updatedAt: DateTime
+}
+
+input HitInput {
+  postHashId: String!
+}
+
+type Mutation {
+  createHit(data: HitInput!): Hit
+  createReply(data: ReplyCreateInput!): Reply!
+  deletePost(id: Float!): String!
+  deleteReply(data: ReplyDeleteInput!): String!
+  toPrivate(id: Float!): String!
+  upsertPost(data: PostInput!, file: Upload): Post!
+  upsertTag(data: TagInput!): Tags!
+}
+
+type Post {
+  content: String!
+  createdAt: DateTime!
+  desc: String!
+  hashId: ID!
+  hit: [Hit!]
+  id: Int!
+  like: Float!
+  open: Boolean!
+  reply: [Reply!]
+  tag: [Tags!]!
+  thumbnail: String
+  title: String!
+  updatedAt: DateTime
+}
+
+input PostInput {
+  content: String!
+  desc: String!
+  hashId: ID
+  isPublished: Boolean!
+  open: Boolean = true
+  tagIds: [Int!]!
+  thumbnail: String = null
+  title: String!
+}
+
+type Query {
+  getDashBoard(data: DashBoardInput!, postId: Float!): [Hit!]
+  getReply(data: ReplyInput!): [Reply!]!
+  post(hashId: String!): Post
+  posts: [Post!]!
+}
+
+type Reply {
+  bgroup: Float!
+  children: [Reply!]!
+  comment: String!
+  createdAt: DateTime!
+  depth: Float!
+  hashId: ID!
+  id: Int!
+  parent: Reply
+  parentId: Float
+  sorts: Float!
+  updatedAt: DateTime
+  writer: String!
+}
+
+input ReplyCreateInput {
+  comment: String!
+
+  """postHashId"""
+  hashId: String!
+  parentId: Float
+
+  """replyHashId"""
+  replyHashId: String
+  writer: String!
+}
+
+input ReplyDeleteInput {
+  hashId: String!
+  replyIds: [Int!]!
+}
+
+input ReplyInput {
+  depth: Float!
+  hashId: String!
+}
+
+input TagInput {
+  hashId: String
+  tagName: String!
+}
+
+type Tags {
+  createdAt: DateTime!
+  hashId: ID!
+  id: Int!
+  post: [Post!]!
+  tag: String!
+  updatedAt: DateTime
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+enum dashBoardFrequency {
+  ONE_MONTH
+  SIX_MONTH
+  THREE_MONTH
+}

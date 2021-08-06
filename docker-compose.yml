@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  front:
+    ports:
+      - "4000:4000"
+    image: jjuu6933/front
+
+  server:
+    ports:
+      - "5000:5000"
+    image: jjuu6933/server
+
+  redis:
+    image: redis:alpine
+    command: [ "redis-server", "--bind", "redis", "--port", "6379" ]
